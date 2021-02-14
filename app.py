@@ -12,7 +12,7 @@ title = '기본 제목'
 content = '기본 본문'
 @app.route('/sending', methods=['GET', 'POST'])
 def sending():
-    if request.method == 'POST':
+    if request.method == 'GET':
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
