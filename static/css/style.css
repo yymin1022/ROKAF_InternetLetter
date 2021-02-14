@@ -7,7 +7,7 @@ html{
   display: flex;
   align-items: center;
   justify-content: center;
-    background-image:url('../image/main.jpg');
+  background-image:url('../image/main.jpg');
   background-size:100% 100%;
   background-color: #08298A;
 }
@@ -25,6 +25,7 @@ body{
   height:100%;
 }
 .content{
+  font-size:20px;
   height:100%;
   width:100%;
   margin:0px;
@@ -36,15 +37,17 @@ body{
   text-align:right;
 }
 input{
+  font-size: 20px;
+  font-weight: normal;
   width:300px;
-  height:50px;
+  height:22px;
   margin:0px;
   margin-left:10px;
   padding:0px;
 }
 .mail-container div{
   font-weight: bold;
-  font-size:40px;
+  font-size:20px;
   text-align: right;
   width:80%;
   height:auto;
