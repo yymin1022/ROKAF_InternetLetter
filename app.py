@@ -10,6 +10,8 @@ name = '홍길동'
 password = '1234'
 title = '기본 제목'
 content = '기본 본문'
+friend = '친구의 친구'
+
 @app.route('/sending', methods=['GET', 'POST'])
 def sending():
     if request.method == 'GET':
@@ -64,7 +66,7 @@ def sending():
         driver.switch_to_window(driver.window_handles[0])
 
         driver.find_element_by_css_selector('#senderName').send_keys(name)  # 이름
-        driver.find_element_by_css_selector('#relationship').send_keys("친구의 친구")  # 관계
+        driver.find_element_by_css_selector('#relationship').send_keys(friend) # 관계
         driver.find_element_by_css_selector('#title').send_keys(title)  # 제목
         driver.find_element_by_css_selector('#contents').send_keys(content)  # 내용 #1200자
         driver.find_element_by_css_selector('#password').send_keys(
@@ -83,9 +85,16 @@ def sending():
 @app.route('/', methods=['GET', 'POST'])
 def missionComplete():
     if request.method == 'POST':
+        global name
+        global title
+        global password
+        global content
+        global friend
+
         name = request.form['name']
         title = request.form['title']
         password = request.form['password']
+        friend = request.form['relation']
         content = request.form['content']
         return render_template('test.html')
 
