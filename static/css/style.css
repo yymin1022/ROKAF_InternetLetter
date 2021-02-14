@@ -13,7 +13,6 @@ html{
 }
 h1{
   text-align:center;
-  font-size:60px;
   margin:0px;
 }
 body{
@@ -61,4 +60,3 @@ input{
   grid-gap:5px;
   grid-template-rows: auto auto auto 1fr auto auto;
 }
-
