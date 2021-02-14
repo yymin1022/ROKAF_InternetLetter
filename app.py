@@ -69,13 +69,18 @@ def sending():
         driver.find_element_by_css_selector('#relationship').send_keys(friend) # 관계
         driver.find_element_by_css_selector('#title').send_keys(title)  # 제목
         driver.find_element_by_css_selector('#contents').send_keys(content)  # 내용 #1200자
-        driver.find_element_by_css_selector('#password').send_keys(
-            password)  # 비밀번호 #비밀번호 다르게 해야될까? 아니면 master key마냥 하나로 쭉 가도 안전할까?
-        try:
-            driver.find_element_by_css_selector('.submit').click()  # 작성 완료
+        driver.find_element_by_css_selector('#password').send_keys(password)  # 비밀번호 #비밀번호 다르게 해야될까? 아니면 master key마냥 하나로 쭉 가도 안전할까?
+        driver.find_element_by_css_selector('.submit').click()  # 작성 완료
+
+        cur_url = driver.current_url  # 현재 페이지 주소 저장
+        print(driver.current_url)
+        print(cur_url)  # 현재 페이지 url 출력
+
+        if (cur_url.find('saveEmailSuccess') != -1):  # 현재 페이지 url에 saveEmailSuccess가 없다면
             return '<h1>success</h1>'
-        except Exception as error:
+        else:
             return '<h1>ERROR... Pleas retry</h1>'
+
         # 근데 이게 가끔 작성 완료가 안될 때가 있거든? 그걸 어떻게 예외 처리해야할지 고민중...
         # driver.find_element_by_xpath(
         #    "/html/body/div[1]/div[2]/div/div[2]/div/div/div/div/div[2]/span/input").click()  # 목록으로

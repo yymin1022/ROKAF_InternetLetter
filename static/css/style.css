@@ -1,5 +1,5 @@
 html{
-  height:70%;
+  height:92%;
 }
 
 .title{
@@ -11,14 +11,14 @@ html{
   background-size:100% 100%;
   background-color: #08298A;
 }
-h1{
+h2{
   text-align:center;
-  margin:0px;
+  margin-bottom:0px;
 }
 body{
   display:grid;
   grid-gap:5px;
-  grid-template-rows: 2fr 9fr;
+  grid-template-rows: 2fr 7fr;
   margin:0px;
   font:Sans-serif;
   height:100%;
@@ -29,27 +29,20 @@ body{
   width:100%;
   margin:0px;
 }
-
 .submitBtn{
   width:30px;
 }
-
 .submitBtn-container{
   text-align:right;
 }
 input{
   font-size: 20px;
   font-weight: normal;
-  width:80%;
+  width:150px;
   height:22px;
   margin:0px;
   margin-left:10px;
   padding:0px;
-}
-
-.input_div{
-  width:10%;
-  height:22px;
 }
 .mail-container div{
   font-weight: bold;
@@ -60,6 +53,7 @@ input{
   margin-bottom:10px;
 }
 .mail-container{
+  margin-top:20px;
   justify-items: center;
   height:100%;
   width:100%;
