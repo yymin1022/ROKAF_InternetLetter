@@ -27,6 +27,7 @@ def missionComplete():
         driver.get(url)
         driver.maximize_window()
         action = ActionChains(driver)
+        driver.implicitly_wait(10)
 
         # 정보 입력 창
         driver.find_element_by_css_selector('#searchName').send_keys('김영민')
@@ -35,29 +36,27 @@ def missionComplete():
         driver.find_element_by_css_selector('#birthDay').send_keys('07')
         driver.find_element_by_css_selector('#btnNext').click()
 
-        time.sleep(2)
 
         # 팝업에서 훈련병 선택
         driver.switch_to_window(driver.window_handles[1])
         driver.find_element_by_css_selector('.choice').click()
 
-        time.sleep(2)
+
 
         # 편지쓰기
         driver.switch_to_window(driver.window_handles[0])
         driver.find_element_by_css_selector('#btnNext').click()
 
-        time.sleep(2)
 
         # 인터넷편지 작성
         driver.find_element_by_xpath("//div[@class='UIbtn']/span[@class='wizBtn large Ngray normal btnR']").click()
 
-        time.sleep(2)
+
 
         # 우편번호 및 주소(디폴트 유현욱 자취방)
         driver.find_element_by_css_selector('#senderZipcode').click()
 
-        time.sleep(2)
+
 
         driver.switch_to_window(driver.window_handles[1])
 
@@ -67,7 +66,7 @@ def missionComplete():
         driver.find_element_by_xpath(
             "/html/body/form[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[2]/a/div/div").click()  # 첫번째 목록 선택 목록 여러개면 div[]로 선택 가능할듯
 
-        time.sleep(1)
+
 
         driver.find_element_by_css_selector('#rtAddrDetail').send_keys("101호")
         driver.find_element_by_css_selector('.btn-bl').click()
