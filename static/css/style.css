@@ -29,20 +29,27 @@ body{
   width:100%;
   margin:0px;
 }
+
 .submitBtn{
   width:30px;
 }
+
 .submitBtn-container{
   text-align:right;
 }
 input{
   font-size: 20px;
   font-weight: normal;
-  width:150px;
+  width:80%;
   height:22px;
   margin:0px;
   margin-left:10px;
   padding:0px;
+}
+
+.input_div{
+  width:15%;
+  height:22px;
 }
 .mail-container div{
   font-weight: bold;
