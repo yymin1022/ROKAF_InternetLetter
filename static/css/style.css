@@ -7,7 +7,7 @@ html{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image:url('../image/main.jpg');
+    background-image:url('../image/main.jpg');
   background-size:100% 100%;
   background-color: #08298A;
 }
@@ -58,3 +58,4 @@ input{
   grid-gap:5px;
   grid-template-rows: auto auto auto 1fr auto auto;
 }
+
