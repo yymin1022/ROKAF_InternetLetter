@@ -6,6 +6,7 @@ import socket
 from flask import Flask, render_template, request, session, redirect, url_for
 app = Flask(__name__, static_url_path='/static')
 
+
 @app.route('/', methods=['GET', 'POST'])
 def missionComplete():
     if request.method == 'POST':
@@ -13,8 +14,11 @@ def missionComplete():
         title = request.form['title']
         password = request.form['password']
         content = request.form['content']
-
-        driver = webdriver.Chrome()
+        options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-dev-shm-usage")
+        driver = webdriver.Chrome(executable_path='/home/ubuntu/gw_in/chromedriver', chrome_options=options)
         # 기본군사훈련단
         # url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
         # 군수 1학교
@@ -78,9 +82,10 @@ def missionComplete():
         driver.find_element_by_css_selector('#password').send_keys(password)  # 비밀번호 #비밀번호 다르게 해야될까? 아니면 master key마냥 하나로 쭉 가도 안전할까?
 
         driver.find_element_by_css_selector('.submit').click()  # 작성 완료
+        return '<h1>success</h1>'
         # 근데 이게 가끔 작성 완료가 안될 때가 있거든? 그걸 어떻게 예외 처리해야할지 고민중...
-        driver.find_element_by_xpath(
-            "/html/body/div[1]/div[2]/div/div[2]/div/div/div/div/div[2]/span/input").click()  # 목록으로
+        #driver.find_element_by_xpath(
+        #    "/html/body/div[1]/div[2]/div/div[2]/div/div/div/div/div[2]/span/input").click()  # 목록으로
     else:
         return render_template('main.html')
 
