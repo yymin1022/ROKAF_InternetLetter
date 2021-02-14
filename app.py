@@ -81,6 +81,7 @@ def missionComplete():
         # 근데 이게 가끔 작성 완료가 안될 때가 있거든? 그걸 어떻게 예외 처리해야할지 고민중...
         driver.find_element_by_xpath(
             "/html/body/div[1]/div[2]/div/div[2]/div/div/div/div/div[2]/span/input").click()  # 목록으로
+        return '<h1>'
     else:
         return render_template('main.html')
 
