@@ -84,21 +84,18 @@ def sending():
 
 @app.route('/', methods=['GET', 'POST'])
 def missionComplete():
+    global name
+    global title
+    global password
+    global content
+    global friend
     if request.method == 'POST':
-        global name
-        global title
-        global password
-        global content
-        global friend
-
         name = request.form['name']
         title = request.form['title']
         password = request.form['password']
         friend = request.form['relation']
         content = request.form['content']
         return render_template('test.html')
-
-
     else:
         return render_template('main.html')
 
