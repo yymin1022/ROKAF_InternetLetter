@@ -1,0 +1,58 @@
+
+
+html{
+  height:70%;
+}
+
+.title{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:url('../image/main.jpg');
+  background-size:100% 100%;
+  background-color: #08298A;
+}
+h1{
+  text-align:center;
+  margin:0px;
+}
+body{
+  display:grid;
+  grid-gap:5px;
+  grid-template-rows: 2fr 9fr;
+  margin:0px;
+  font:Sans-serif;
+  height:100%;
+}
+.content{
+  height:100%;
+  width:100%;
+  margin:0px;
+}
+.submitBtn{
+  width:30px;
+}
+.submitBtn-container{
+  text-align:right;
+}
+input{
+  width:100px;
+  margin:0px;
+  margin-left:10px;
+  padding:0px;
+}
+.mail-container div{
+  text-align: right;
+  width:80%;
+  height:100%;
+  margin-bottom:5px;
+}
+.mail-container{
+  justify-items: center;
+  height:100%;
+  width:100%;
+  display:grid;
+  grid-gap:5px;
+  grid-template-rows: 25px 25px 25px 1fr 25px 25px;
+}
