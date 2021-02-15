@@ -31,10 +31,10 @@ def sending():
         driver.implicitly_wait(10)
 
         # 정보 입력 창
-        driver.find_element_by_css_selector('#searchName').send_keys('김영민')
-        driver.find_element_by_css_selector('#birthYear').send_keys('2000')
-        driver.find_element_by_css_selector('#birthMonth').send_keys('04')
-        driver.find_element_by_css_selector('#birthDay').send_keys('07')
+        driver.find_element_by_css_selector('#searchName').send_keys('김영민') #이규원
+        driver.find_element_by_css_selector('#birthYear').send_keys('2000') #2000
+        driver.find_element_by_css_selector('#birthMonth').send_keys('04') #04
+        driver.find_element_by_css_selector('#birthDay').send_keys('07') #18
         driver.find_element_by_css_selector('#btnNext').click()
 
         # 팝업에서 훈련병 선택
