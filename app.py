@@ -21,9 +21,9 @@ def sending():
         options.add_argument("--disable-dev-shm-usage")
         driver = webdriver.Chrome(executable_path='/home/ubuntu/gw_in/chromedriver', chrome_options=options)
         # 기본군사훈련단
-        # url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
+        url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
         # 군수 1학교
-        url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=157620025&siteId=gisool2&menuUIType=sub'
+        # url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=157620025&siteId=gisool2&menuUIType=sub'
 
         driver.get(url)
         driver.maximize_window()
@@ -31,10 +31,10 @@ def sending():
         driver.implicitly_wait(10)
 
         # 정보 입력 창
-        driver.find_element_by_css_selector('#searchName').send_keys('김영민') #이규원
+        driver.find_element_by_css_selector('#searchName').send_keys('이규원') #이규원
         driver.find_element_by_css_selector('#birthYear').send_keys('2000') #2000
         driver.find_element_by_css_selector('#birthMonth').send_keys('04') #04
-        driver.find_element_by_css_selector('#birthDay').send_keys('07') #18
+        driver.find_element_by_css_selector('#birthDay').send_keys('18') #18
         driver.find_element_by_css_selector('#btnNext').click()
 
         # 팝업에서 훈련병 선택
