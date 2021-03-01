@@ -19,7 +19,7 @@ def sending():
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
-        driver = webdriver.Chrome(executable_path='/home/ubuntu/gw_in/chromedriver', chrome_options=options)
+        driver = webdriver.Chrome(executable_path='/home/server/web/chromedriver', chrome_options=options)
         # 기본군사훈련단
         url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
         # 군수 1학교
