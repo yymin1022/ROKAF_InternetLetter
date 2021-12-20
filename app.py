@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 import socket
 from flask import Flask, render_template, request, session, redirect, url_for
@@ -19,7 +21,7 @@ def sending():
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
-        driver = webdriver.Chrome(executable_path='/home/server/web/chromedriver', chrome_options=options)
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager(log_level=0).install()), chrome_options=options)
         # 기본군사훈련단
         url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
         # 정보통신학교
