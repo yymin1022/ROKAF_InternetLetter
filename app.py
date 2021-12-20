@@ -31,60 +31,50 @@ def sending():
         action = ActionChains(driver)
         driver.implicitly_wait(10)  
 
-        # 정보 입력 창
         driver.find_element_by_css_selector('#searchName').send_keys('김호규') 
         driver.find_element_by_css_selector('#birthYear').send_keys('2000')
         driver.find_element_by_css_selector('#birthMonth').send_keys('04')
         driver.find_element_by_css_selector('#birthDay').send_keys('27')
         driver.find_element_by_css_selector('#btnNext').click()
 
-        # 팝업에서 훈련병 선택
         driver.switch_to.window(driver.window_handles[1])
         driver.find_element_by_css_selector('.choice').click()
 
-        # 편지쓰기
         driver.switch_to.window(driver.window_handles[0])
         driver.find_element_by_css_selector('#btnNext').click()
 
-        # 인터넷편지 작성
         driver.find_element_by_xpath("//div[@class='UIbtn']/span[@class='wizBtn large Ngray normal btnR']").click()
 
-        # 우편번호 및 주소(디폴트 유현욱 자취방)
         driver.find_element_by_css_selector('#senderZipcode').click()
 
         driver.switch_to.window(driver.window_handles[1])
 
         driver.find_element_by_css_selector('.popSearchInput').send_keys("송백로 46")
 
-        driver.find_element_by_xpath("/html/body/form[2]/div/div/div[1]/div[1]/fieldset/span/input[2]").click()  # 검색 버튼
+        driver.find_element_by_xpath("/html/body/form[2]/div/div/div[1]/div[1]/fieldset/span/input[2]").click()
         driver.find_element_by_xpath(
-            "/html/body/form[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[2]/a/div/div").click()  # 첫번째 목록 선택 목록 여러개면 div[]로 선택 가능할듯
+            "/html/body/form[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[2]/a/div/div").click()
 
         driver.find_element_by_css_selector('#rtAddrDetail').send_keys("사서함 306-16호 3중대 3소대 17번 김호규 훈련병")
         driver.find_element_by_css_selector('.btn-bl').click()
 
-        # 팝업 창에서 원래 창으로 이동
         driver.switch_to.window(driver.window_handles[0])
 
-        driver.find_element_by_css_selector('#senderName').send_keys(name)  # 이름
-        driver.find_element_by_css_selector('#relationship').send_keys(friend) # 관계
-        driver.find_element_by_css_selector('#title').send_keys(title)  # 제목
-        driver.find_element_by_css_selector('#contents').send_keys(content)  # 내용 #1200자
-        driver.find_element_by_css_selector('#password').send_keys(password)  # 비밀번호 #비밀번호 다르게 해야될까? 아니면 master key마냥 하나로 쭉 가도 안전할까?
-        driver.find_element_by_css_selector('.submit').click()  # 작성 완료
+        driver.find_element_by_css_selector('#senderName').send_keys(name)
+        driver.find_element_by_css_selector('#relationship').send_keys(friend)
+        driver.find_element_by_css_selector('#title').send_keys(title)
+        driver.find_element_by_css_selector('#contents').send_keys(content)
+        driver.find_element_by_css_selector('#password').send_keys(password)
+        driver.find_element_by_css_selector('.submit').click()
 
-        cur_url = driver.current_url  # 현재 페이지 주소 저장
+        cur_url = driver.current_url
         print(driver.current_url)
-        print(cur_url)  # 현재 페이지 url 출력
+        print(cur_url)
 
-        if (cur_url.find('saveEmailSuccess') != -1):  # 현재 페이지 url에 saveEmailSuccess가 없다면
+        if (cur_url.find('saveEmailSuccess') != -1):
             return '<h1>인편 등록이 완료되었습니다.</h1>'
         else:
             return '<h1>인편 등록에 실패하였습니다. 뒤로 이동하여 다시 시도해주세요.</h1>'
-
-        # 근데 이게 가끔 작성 완료가 안될 때가 있거든? 그걸 어떻게 예외 처리해야할지 고민중...
-        # driver.find_element_by_xpath(
-        #    "/html/body/div[1]/div[2]/div/div[2]/div/div/div/div/div[2]/span/input").click()  # 목록으로
     else:
         return render_template('main.html')
 
