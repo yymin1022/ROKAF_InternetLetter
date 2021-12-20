@@ -104,8 +104,6 @@ def missionComplete():
         return render_template('main.html')
 
 if __name__ == '__main__':
-    IP = str(socket.gethostbyname(socket.gethostname()))
-    print(IP)
     app.run(host='0.0.0.0', port=8080, debug=False)
     app.run()
 
