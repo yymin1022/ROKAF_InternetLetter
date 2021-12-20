@@ -71,6 +71,8 @@ def sending():
 
         cur_url = driver.current_url
 
+        driver.quit()
+
         if (cur_url.find('saveEmailSuccess') != -1):
             return '<h1>인터넷 편지 등록이 완료되었습니다.</h1>'
         else:
