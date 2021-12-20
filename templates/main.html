@@ -3,19 +3,15 @@
   <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta property='og:image' content='../image/main.jpg'>
-    <title>규원짱에게 보내는 편지</title>
+    <title>호규에게 보내는 인터넷 편지</title>
   </head>
   <body>
-    <div class='title'>
-      <h2 style="color: white;">규원이의 큣트큐트한 인터넷 편지,,,💌</h2>
-    </div>
     <div>
       <form class='mail-container' action = "/" method = "POST">
         <div>이름<input type='text'name='name'></div>
         <div>관계<input type='text'name='relation'></div>
         <div>제목<input type='text'name='title'></div>
-        <div><textarea class='content' name='content'>1200자 미만</textarea></div>
+        <div><textarea class='content' placeholder="1200자 미만" name='content'></textarea></div>
         <div>비번<input type='text'name='password'></div>
         <div><input type='submit' value='📬'></div>
       </form>
