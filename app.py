@@ -70,8 +70,6 @@ def sending():
         driver.find_element_by_css_selector('.submit').click()
 
         cur_url = driver.current_url
-        print(driver.current_url)
-        print(cur_url)
 
         if (cur_url.find('saveEmailSuccess') != -1):
             return '<h1>인편 등록이 완료되었습니다.</h1>'
