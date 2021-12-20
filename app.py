@@ -21,19 +21,19 @@ def sending():
         options.add_argument("--disable-dev-shm-usage")
         driver = webdriver.Chrome(executable_path='/home/server/web/chromedriver', chrome_options=options)
         # 기본군사훈련단
-        # url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
+        url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
         # 정보통신학교
-        url = 'http://airforce.mil.kr:8081/user/indexSub.action?codyMenuSeq=156894686&siteId=tong-new&menuUIType=sub'
+        # url = 'http://airforce.mil.kr:8081/user/indexSub.action?codyMenuSeq=156894686&siteId=tong-new&menuUIType=sub'
         driver.get(url)
         driver.maximize_window()
         action = ActionChains(driver)
         driver.implicitly_wait(10)  
 
         # 정보 입력 창
-        driver.find_element_by_css_selector('#searchName').send_keys('이규원') 
+        driver.find_element_by_css_selector('#searchName').send_keys('김호규') 
         driver.find_element_by_css_selector('#birthYear').send_keys('2000')
         driver.find_element_by_css_selector('#birthMonth').send_keys('04')
-        driver.find_element_by_css_selector('#birthDay').send_keys('18')
+        driver.find_element_by_css_selector('#birthDay').send_keys('27')
         driver.find_element_by_css_selector('#btnNext').click()
 
         # 팝업에서 훈련병 선택
@@ -52,13 +52,13 @@ def sending():
 
         driver.switch_to_window(driver.window_handles[1])
 
-        driver.find_element_by_css_selector('.popSearchInput').send_keys("상도로53길 45-6")
+        driver.find_element_by_css_selector('.popSearchInput').send_keys("송백로 46")
 
         driver.find_element_by_xpath("/html/body/form[2]/div/div/div[1]/div[1]/fieldset/span/input[2]").click()  # 검색 버튼
         driver.find_element_by_xpath(
             "/html/body/form[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[2]/a/div/div").click()  # 첫번째 목록 선택 목록 여러개면 div[]로 선택 가능할듯
 
-        driver.find_element_by_css_selector('#rtAddrDetail').send_keys("101호")
+        driver.find_element_by_css_selector('#rtAddrDetail').send_keys("사서함 306-16호 3중대 3소대 17번 김호규 훈련병")
         driver.find_element_by_css_selector('.btn-bl').click()
 
         # 팝업 창에서 원래 창으로 이동
