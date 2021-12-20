@@ -78,9 +78,9 @@ def sending():
         print(cur_url)  # 현재 페이지 url 출력
 
         if (cur_url.find('saveEmailSuccess') != -1):  # 현재 페이지 url에 saveEmailSuccess가 없다면
-            return '<h1>success</h1>'
+            return '<h1>인편 등록이 완료되었습니다.</h1>'
         else:
-            return '<h1>ERROR... Pleas retry</h1>'
+            return '<h1>인편 등록에 실패하였습니다. 뒤로 이동하여 다시 시도해주세요.</h1>'
 
         # 근데 이게 가끔 작성 완료가 안될 때가 있거든? 그걸 어떻게 예외 처리해야할지 고민중...
         # driver.find_element_by_xpath(
