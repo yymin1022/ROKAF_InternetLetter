@@ -72,9 +72,9 @@ def sending():
         cur_url = driver.current_url
 
         if (cur_url.find('saveEmailSuccess') != -1):
-            return '<h1>인편 등록이 완료되었습니다.</h1>'
+            return '<h1>인터넷 편지 등록이 완료되었습니다.</h1>'
         else:
-            return '<h1>인편 등록에 실패하였습니다. 뒤로 이동하여 다시 시도해주세요.</h1>'
+            return '<h1>인터넷 편지 등록에 실패하였습니다. 뒤로 이동하여 다시 시도해주세요.</h1>'
     else:
         return render_template('main.html')
 
