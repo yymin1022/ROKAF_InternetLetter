@@ -21,7 +21,7 @@ def sending():
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager(log_level=0).install()), chrome_options=options)
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager(log_level=0).install()), options=options)
         # 기본군사훈련단
         url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
         # 정보통신학교
@@ -39,11 +39,11 @@ def sending():
         driver.find_element_by_css_selector('#btnNext').click()
 
         # 팝업에서 훈련병 선택
-        driver.switch_to_window(driver.window_handles[1])
+        driver.switch_to.window(driver.window_handles[1])
         driver.find_element_by_css_selector('.choice').click()
 
         # 편지쓰기
-        driver.switch_to_window(driver.window_handles[0])
+        driver.switch_to.window(driver.window_handles[0])
         driver.find_element_by_css_selector('#btnNext').click()
 
         # 인터넷편지 작성
@@ -52,7 +52,7 @@ def sending():
         # 우편번호 및 주소(디폴트 유현욱 자취방)
         driver.find_element_by_css_selector('#senderZipcode').click()
 
-        driver.switch_to_window(driver.window_handles[1])
+        driver.switch_to.window(driver.window_handles[1])
 
         driver.find_element_by_css_selector('.popSearchInput').send_keys("송백로 46")
 
@@ -64,7 +64,7 @@ def sending():
         driver.find_element_by_css_selector('.btn-bl').click()
 
         # 팝업 창에서 원래 창으로 이동
-        driver.switch_to_window(driver.window_handles[0])
+        driver.switch_to.window(driver.window_handles[0])
 
         driver.find_element_by_css_selector('#senderName').send_keys(name)  # 이름
         driver.find_element_by_css_selector('#relationship').send_keys(friend) # 관계
