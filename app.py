@@ -25,9 +25,9 @@ def sending():
         driver = webdriver.Chrome(service=Service(ChromeDriverManager(log_level=0).install()), options=options)
 
         # 기본군사훈련단
-        url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
+        # url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
         # 정보통신학교
-        # url = 'http://airforce.mil.kr:8081/user/indexSub.action?codyMenuSeq=156894686&siteId=tong-new&menuUIType=sub'
+        url = 'http://airforce.mil.kr:8081/user/indexSub.action?codyMenuSeq=156894686&siteId=tong-new&menuUIType=sub'
         driver.get(url)
         driver.maximize_window()
         action = ActionChains(driver)
